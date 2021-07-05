@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/Caracas',
 
     /*
     |--------------------------------------------------------------------------
@@ -227,6 +227,25 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Statuses
+    |--------------------------------------------------------------------------
+    |
+    | Array of string statuses supported by the app.
+    |
+    */
+
+    'statuses' => [
+
+        'default'  => 'CREATED',
+
+        'created'  => 'CREATED',
+        'payed'    => 'PAYED',
+        'rejected' => 'REJECTED',
 
     ],
 
