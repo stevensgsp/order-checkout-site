@@ -42,3 +42,23 @@ Run migrations and seeders
 ```bash
 php artisan migrate --seed
 ```
+
+## Running the tests
+
+You may run them using ```phpunit```:
+
+```bash
+./vendor/bin/phpunit
+```
+
+In addition to the ```phpunit``` command, you may use the ```test``` Artisan command to run your tests. The Artisan test runner provides verbose test reports in order to ease development and debugging:
+
+```bash
+php artisan test
+```
+
+If you want to generate a code coverage report in HTML format, you may pass the ```--coverage-html``` phpunit command-line option.
+
+```bash
+php artisan test --coverage-html ..\coverage
+```
