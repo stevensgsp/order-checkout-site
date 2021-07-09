@@ -47,9 +47,11 @@ abstract class BaseRepository
     {
         $model = $this->app->make($this->model());
 
+        // @codeCoverageIgnoreStart
         if (! $model instanceof Model) {
             throw new Exception(sprintf('Class %s must be an instance of %s', $this->model(), Model::class));
         }
+        // @codeCoverageIgnoreEnd
 
         $this->model = $model;
     }

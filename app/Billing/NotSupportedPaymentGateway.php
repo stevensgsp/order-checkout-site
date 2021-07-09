@@ -7,6 +7,8 @@ class NotSupportedPaymentGateway implements PaymentGatewayContract
     /**
      * Not supported.
      *
+     * @codeCoverageIgnore
+     *
      * @param  string  $reference
      * @param  float   $amount
      * @param  string  $currency

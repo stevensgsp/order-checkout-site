@@ -49,6 +49,8 @@ class OrderRepository extends BaseRepository
     /**
      * Get status by payment status.
      *
+     * @codeCoverageIgnore
+     *
      * @param  string  $paymentStatus
      * @return string
      */

@@ -86,8 +86,6 @@ class PlacetopayHandler
      *
      * @param  mixed  $requestId
      * @return self
-     *
-     * @throws \Exception
      */
     public function getRequestInfo($requestId): self
     {
@@ -102,8 +100,6 @@ class PlacetopayHandler
      *
      * @param  array  $request
      * @return \GuzzleHttp\Psr7\GuzzleResponse
-     *
-     * @throws \Symfony\Component\HttpKernel\Exception\HttpException
      */
     protected function makeRequest(string $uri, array $request): GuzzleResponse
     {
@@ -118,12 +114,7 @@ class PlacetopayHandler
                 ]
             ]);
         } catch (GuzzleRequestException $e) {
-            if ($e->hasGuzzleResponse()) {
-                $response =  $e->getGuzzleResponse();
-            } else {
-                Log::error('Error at payment request.', [$response]);
-                abort('Error at payment request.');
-            }
+            $response =  $e->getResponse();
         }
 
         return $response;
@@ -140,7 +131,7 @@ class PlacetopayHandler
             'auth'       => $this->auth,
             'payment'    => $this->payment,
             'expiration' => date('c', strtotime('+1 days')),
-            'returnUrl'  => route('orders.show', ['orderId' => Arr::get($this->payment, 'reference')]),
+            'returnUrl'  => route('orders.show', ['orderId' => Arr::get($this->payment, 'reference', -1)]),
             'ipAddress'  => request()->ip(),
             'userAgent'  => request()->server('HTTP_USER_AGENT'),
         ];

@@ -83,6 +83,8 @@ class Order extends Model
     /**
      * Get the payment status html class.
      *
+     * @codeCoverageIgnore
+     *
      * @return string|null
      */
     public function getPaymentStatusClassAttribute(): ?string
@@ -101,6 +103,8 @@ class Order extends Model
 
     /**
      * Get the status html class.
+     *
+     * @codeCoverageIgnore
      *
      * @return string|null
      */
