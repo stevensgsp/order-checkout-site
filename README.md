@@ -62,3 +62,14 @@ If you want to generate a code coverage report in HTML format, you may pass the 
 ```bash
 php artisan test --coverage-html ..\coverage
 ```
+
+### Current code coverage
+
+<img src="https://i.imgur.com/sJCCwR6.png">
+
+## Screenshots
+
+<img src="https://i.imgur.com/SAS5tmr.png">
+<img src="https://i.imgur.com/ipLLz1V.png">
+<img src="https://i.imgur.com/EOIqb7H.png">
+<img src="https://i.imgur.com/y9oLYrP.png">
